@@ -161,7 +161,86 @@ MY_7Z_SRC = $(MY_7Z_SRC_DIR)/7zCompressionMode.cpp \
             $(MY_7Z_SRC_DIR)/7zUpdate.cpp \
             $(MY_7Z_SRC_DIR)/7zRegister.cpp
 
-# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC MY_AR_COMMON_SRC MY_7Z_SRC
+# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC MY_AR_COMMON_SRC MY_7Z_SRC MY_CAB_SRC
+MY_CAB_SRC_DIR = $(MY_AR_SRC_DIR)/Cab
+MY_CAB_SRC = $(MY_CAB_SRC_DIR)/CabBlockInStream.cpp \
+             $(MY_CAB_SRC_DIR)/CabHandler.cpp \
+             $(MY_CAB_SRC_DIR)/CabHeader.cpp \
+             $(MY_CAB_SRC_DIR)/CabIn.cpp \
+             $(MY_CAB_SRC_DIR)/CabRegister.cpp
+
+TAR_OBJS = \
+  TarHandler.cpp \
+  TarHandlerOut.cpp \
+  TarHeader.cpp \
+  TarIn.cpp \
+  TarOut.cpp \
+  TarUpdate.cpp \
+  TarRegister.cpp
+
+ZIP_OBJS = \
+  ZipAddCommon.cpp \
+  ZipHandler.cpp \
+  ZipHandlerOut.cpp \
+  ZipHeader.cpp \
+  ZipIn.cpp \
+  ZipItem.cpp \
+  ZipOut.cpp \
+  ZipUpdate.cpp \
+  ZipRegister.cpp
+
+COMPRESS_OBJS = \
+  Bcj2Coder.cpp \
+  Bcj2Register.cpp \
+  BcjCoder.cpp \
+  BcjRegister.cpp \
+  BitlDecoder.cpp \
+  BranchCoder.cpp \
+  BranchMisc.cpp \
+  BranchRegister.cpp \
+  ByteSwap.cpp \
+  BZip2Crc.cpp \
+  BZip2Decoder.cpp \
+  BZip2Encoder.cpp \
+  BZip2Register.cpp \
+  CopyCoder.cpp \
+  CopyRegister.cpp \
+  Deflate64Register.cpp \
+  DeflateDecoder.cpp \
+  DeflateEncoder.cpp \
+  DeflateRegister.cpp \
+  DeltaFilter.cpp \
+  ImplodeDecoder.cpp \
+  ImplodeHuffmanDecoder.cpp \
+  Lzma2Decoder.cpp \
+  Lzma2Encoder.cpp \
+  Lzma2Register.cpp \
+  LzmaDecoder.cpp \
+  LzmaEncoder.cpp \
+  LzmaRegister.cpp \
+  LzOutWindow.cpp \
+  Lzx86Converter.cpp \
+  LzxDecoder.cpp \
+  PpmdDecoder.cpp \
+  PpmdEncoder.cpp \
+  PpmdRegister.cpp \
+  PpmdZip.cpp \
+  QuantumDecoder.cpp \
+  ShrinkDecoder.cpp \
+  ZDecoder.cpp \
+
+CRYPTO_OBJS = \
+  7zAes.cpp \
+  7zAesRegister.cpp \
+  HmacSha1.cpp \
+  MyAes.cpp \
+  Pbkdf2HmacSha1.cpp \
+  RandGen.cpp \
+  Sha1.cpp \
+  WzAes.cpp \
+  ZipCrypto.cpp \
+  ZipStrong.cpp \
+
 # CAB_OBJS
 # TAR_OBJS
 # ZIP_OBJS
