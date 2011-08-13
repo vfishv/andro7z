@@ -129,8 +129,19 @@ MY_AR_SRC  = $(MY_AR_SRC_DIR)/Bz2Handler.cpp \
              $(MY_AR_SRC_DIR)/XzHandler.cpp \
              $(MY_AR_SRC_DIR)/ZHandler.cpp
 
-# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC
 # AR_COMMON_OBJS
+MY_AR_COMMON_DIR = $(MY_AR_SRC_DIR)/Common
+MY_AR_COMMON_SRC = $(MY_AR_COMMON_DIR)/CoderMixer2.cpp \
+                   $(MY_AR_COMMON_DIR)/CoderMixer2MT.cpp \
+                   $(MY_AR_COMMON_DIR)/CrossThreadProgress.cpp \
+                   $(MY_AR_COMMON_DIR)/DummyOutStream.cpp \
+                   $(MY_AR_COMMON_DIR)/FindSignature.cpp \
+                   $(MY_AR_COMMON_DIR)/HandlerOut.cpp \
+                   $(MY_AR_COMMON_DIR)/InStreamWithCRC.cpp \
+                   $(MY_AR_COMMON_DIR)/ItemNameUtils.cpp \
+                   $(MY_AR_COMMON_DIR)/MultiStream.cpp \
+                   $(MY_AR_COMMON_DIR)/OutStreamWithCRC.cpp \
+                   $(MY_AR_COMMON_DIR)/ParseProperties.cpp
 # 7Z_OBJS
 # CAB_OBJS
 # TAR_OBJS
