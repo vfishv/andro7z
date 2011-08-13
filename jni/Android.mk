@@ -28,19 +28,36 @@ MY_CPP_DIR = $(LOCAL_PATH)/CPP
 MY_7ZIP_DIR = $(MY_CPP_DIR)/7zip
 
 # 7zip ui src dir
+MY_7ZIP_UI_DIR = $(MY_7ZIP_DIR)/UI
 
 # CONSOLE_OBJS
-MY_CONSOLE_SRC = BenchCon.o \
-  ConsoleClose.o \
-  ExtractCallbackConsole.o \
-  List.o \
-  Main.o \
-  MainAr.o \
-  OpenCallbackConsole.o \
-  PercentPrinter.o \
-  UpdateCallbackConsole.o \
-  UserInputUtils.o
+MY_CONSOLE_SRC = $(MY_7ZIP_UI_DIR)/BenchCon.cpp \
+                 $(MY_7ZIP_UI_DIR)/ConsoleClose.cpp \
+                 $(MY_7ZIP_UI_DIR)/ExtractCallbackConsole.cpp \
+                 $(MY_7ZIP_UI_DIR)/List.cpp \
+                 $(MY_7ZIP_UI_DIR)/Main.cpp \
+                 $(MY_7ZIP_UI_DIR)/MainAr.cpp \
+                 $(MY_7ZIP_UI_DIR)/OpenCallbackConsole.cpp \
+                 $(MY_7ZIP_UI_DIR)/PercentPrinter.cpp \
+                 $(MY_7ZIP_UI_DIR)/UpdateCallbackConsole.cpp \
+                 $(MY_7ZIP_UI_DIR)/UserInputUtils.cpp
+
+# common src dir
+MY_COMMON_SRC_DIR = $(MY_CPP_DIR)/Common
 # COMMON_OBJS
+CommandLineParser.cpp \
+  CRC.cpp \
+  IntToString.cpp \
+  ListFileUtils.cpp \
+  StdInStream.cpp \
+  StdOutStream.cpp \
+  MyString.cpp \
+  StringConvert.cpp \
+  StringToInt.cpp \
+  UTFConvert.cpp \
+  MyWindows.cpp \
+  MyVector.cpp \
+  Wildcard.cpp
 # WIN_OBJS
 # 7ZIP_COMMON_OBJS
 # UI_COMMON_OBJS
