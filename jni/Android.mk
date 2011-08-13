@@ -142,7 +142,26 @@ MY_AR_COMMON_SRC = $(MY_AR_COMMON_DIR)/CoderMixer2.cpp \
                    $(MY_AR_COMMON_DIR)/MultiStream.cpp \
                    $(MY_AR_COMMON_DIR)/OutStreamWithCRC.cpp \
                    $(MY_AR_COMMON_DIR)/ParseProperties.cpp
+
 # 7Z_OBJS
+MY_7Z_SRC_DIR = $(MY_AR_SRC_DIR)/7z
+MY_7Z_SRC = $(MY_7Z_SRC_DIR)/7zCompressionMode.cpp \
+            $(MY_7Z_SRC_DIR)/7zDecode.cpp \
+            $(MY_7Z_SRC_DIR)/7zEncode.cpp \
+            $(MY_7Z_SRC_DIR)/7zExtract.cpp \
+            $(MY_7Z_SRC_DIR)/7zFolderInStream.cpp \
+            $(MY_7Z_SRC_DIR)/7zFolderOutStream.cpp \
+            $(MY_7Z_SRC_DIR)/7zHandler.cpp \
+            $(MY_7Z_SRC_DIR)/7zHandlerOut.cpp \
+            $(MY_7Z_SRC_DIR)/7zHeader.cpp \
+            $(MY_7Z_SRC_DIR)/7zIn.cpp \
+            $(MY_7Z_SRC_DIR)/7zOut.cpp \
+            $(MY_7Z_SRC_DIR)/7zProperties.cpp \
+            $(MY_7Z_SRC_DIR)/7zSpecStream.cpp \
+            $(MY_7Z_SRC_DIR)/7zUpdate.cpp \
+            $(MY_7Z_SRC_DIR)/7zRegister.cpp
+
+# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC MY_AR_COMMON_SRC MY_7Z_SRC
 # CAB_OBJS
 # TAR_OBJS
 # ZIP_OBJS
