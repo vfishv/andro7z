@@ -59,7 +59,19 @@ MY_COMMON_SRC = $(MY_COMMON_SRC_DIR)/CommandLineParser.cpp \
                 $(MY_COMMON_SRC_DIR)/MyVector.cpp \
                 $(MY_COMMON_SRC_DIR)/Wildcard.cpp
 
+MY_WIN_SRC_DIR = $(MY_CPP_DIR)/Windows
 # WIN_OBJS
+MY_WIN_SRC = $(MY_WIN_SRC_DIR)/Error.cpp \
+             $(MY_WIN_SRC_DIR)/FileDir.cpp \
+             $(MY_WIN_SRC_DIR)/FileFind.cpp \
+             $(MY_WIN_SRC_DIR)/FileIO.cpp \
+             $(MY_WIN_SRC_DIR)/FileName.cpp \
+             $(MY_WIN_SRC_DIR)/PropVariant.cpp \
+             $(MY_WIN_SRC_DIR)/PropVariantConversions.cpp \
+             $(MY_WIN_SRC_DIR)/Synchronization.cpp \
+             $(MY_WIN_SRC_DIR)/System.cpp \
+             $(MY_WIN_SRC_DIR)/Time.cpp
+
 # 7ZIP_COMMON_OBJS
 # UI_COMMON_OBJS
 # AR_OBJS
