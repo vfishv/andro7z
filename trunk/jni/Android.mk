@@ -9,29 +9,29 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    := 7za
 
 # Local defines copy from '/Alone'
-MY_LOCAL_DEFINES = -DBREAK_HANDLER -DUNICODE -D_UNICODE
+MY_LOCAL_DEFINES := -DBREAK_HANDLER -DUNICODE -D_UNICODE
 
 # Local defines copy from 'makefile.linux_cross_arm
-MY_MACHINE_DEFINES = -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
+MY_MACHINE_DEFINES := -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
 					 -DNDEBUG -D_REENTRANT -DENV_UNIX \
 					 -D_7ZIP_LARGE_PAGES
 
 # Compose CXXFLAGS
-MY_CFLAGS = $(MY_LOCAL_DEFINES) $(MY_MACHINE_DEFINES)
+MY_CFLAGS := $(MY_LOCAL_DEFINES) $(MY_MACHINE_DEFINES)
 
 # C src dir
-MY_C_DIR = $(LOCAL_PATH)/C
+MY_C_DIR := $(LOCAL_PATH)/C
 # CPP src dir
-MY_CPP_DIR = $(LOCAL_PATH)/CPP
+MY_CPP_DIR := $(LOCAL_PATH)/CPP
 
 # 7zip src dir
-MY_7ZIP_DIR = $(MY_CPP_DIR)/7zip
+MY_7ZIP_DIR := $(MY_CPP_DIR)/7zip
 
 # 7zip ui src dir
-MY_7ZIP_UI_DIR = $(MY_7ZIP_DIR)/UI
+MY_7ZIP_UI_DIR := $(MY_7ZIP_DIR)/UI
 
 # CONSOLE_OBJS
-MY_CONSOLE_SRC = $(MY_7ZIP_UI_DIR)/BenchCon.cpp \
+MY_CONSOLE_SRC := $(MY_7ZIP_UI_DIR)/BenchCon.cpp \
                  $(MY_7ZIP_UI_DIR)/ConsoleClose.cpp \
                  $(MY_7ZIP_UI_DIR)/ExtractCallbackConsole.cpp \
                  $(MY_7ZIP_UI_DIR)/List.cpp \
@@ -43,9 +43,9 @@ MY_CONSOLE_SRC = $(MY_7ZIP_UI_DIR)/BenchCon.cpp \
                  $(MY_7ZIP_UI_DIR)/UserInputUtils.cpp
 
 # common src dir
-MY_COMMON_SRC_DIR = $(MY_CPP_DIR)/Common
+MY_COMMON_SRC_DIR := $(MY_CPP_DIR)/Common
 # COMMON_OBJS
-MY_COMMON_SRC = $(MY_COMMON_SRC_DIR)/CommandLineParser.cpp \
+MY_COMMON_SRC := $(MY_COMMON_SRC_DIR)/CommandLineParser.cpp \
                 $(MY_COMMON_SRC_DIR)/CRC.cpp \
                 $(MY_COMMON_SRC_DIR)/IntToString.cpp \
                 $(MY_COMMON_SRC_DIR)/ListFileUtils.cpp \
@@ -59,9 +59,9 @@ MY_COMMON_SRC = $(MY_COMMON_SRC_DIR)/CommandLineParser.cpp \
                 $(MY_COMMON_SRC_DIR)/MyVector.cpp \
                 $(MY_COMMON_SRC_DIR)/Wildcard.cpp
 
-MY_WIN_SRC_DIR = $(MY_CPP_DIR)/Windows
+MY_WIN_SRC_DIR := $(MY_CPP_DIR)/Windows
 # WIN_OBJS
-MY_WIN_SRC = $(MY_WIN_SRC_DIR)/Error.cpp \
+MY_WIN_SRC := $(MY_WIN_SRC_DIR)/Error.cpp \
              $(MY_WIN_SRC_DIR)/FileDir.cpp \
              $(MY_WIN_SRC_DIR)/FileFind.cpp \
              $(MY_WIN_SRC_DIR)/FileIO.cpp \
@@ -72,9 +72,9 @@ MY_WIN_SRC = $(MY_WIN_SRC_DIR)/Error.cpp \
              $(MY_WIN_SRC_DIR)/System.cpp \
              $(MY_WIN_SRC_DIR)/Time.cpp
 
-MY_7ZIP_COMMON_SRC_DIR = $(MY_7ZIP_DIR)/Common
+MY_7ZIP_COMMON_SRC_DIR := $(MY_7ZIP_DIR)/Common
 # 7ZIP_COMMON_OBJS
-MY_7ZIP_COMMON_SRC = $(MY_7ZIP_COMMON_SRC_DIR)/CreateCoder.cpp \
+MY_7ZIP_COMMON_SRC := $(MY_7ZIP_COMMON_SRC_DIR)/CreateCoder.cpp \
                      $(MY_7ZIP_COMMON_SRC_DIR)/CWrappers.cpp \
                      $(MY_7ZIP_COMMON_SRC_DIR)/FilePathAutoRename.cpp \
                      $(MY_7ZIP_COMMON_SRC_DIR)/FileStreams.cpp \
@@ -97,8 +97,8 @@ MY_7ZIP_COMMON_SRC = $(MY_7ZIP_COMMON_SRC_DIR)/CreateCoder.cpp \
                      $(MY_7ZIP_COMMON_SRC_DIR)/VirtThread.cpp
 
 # 7ZIP_UI_COMMON_OBJS
-MY_7ZIP_UI_COMMON_SRC_DIR = $(MY_7ZIP_UI_DIR)/Common
-MY_7ZIP_UI_COMMON_SRC =  $(MY_7ZIP_UI_COMMON_SRC_DIR)/ArchiveCommandLine.cpp \
+MY_7ZIP_UI_COMMON_SRC_DIR := $(MY_7ZIP_UI_DIR)/Common
+MY_7ZIP_UI_COMMON_SRC :=  $(MY_7ZIP_UI_COMMON_SRC_DIR)/ArchiveCommandLine.cpp \
                          $(MY_7ZIP_UI_COMMON_SRC_DIR)/ArchiveExtractCallback.cpp \
                          $(MY_7ZIP_UI_COMMON_SRC_DIR)/ArchiveOpenCallback.cpp \
                          $(MY_7ZIP_UI_COMMON_SRC_DIR)/Bench.cpp \
@@ -119,8 +119,8 @@ MY_7ZIP_UI_COMMON_SRC =  $(MY_7ZIP_UI_COMMON_SRC_DIR)/ArchiveCommandLine.cpp \
                          $(MY_7ZIP_UI_COMMON_SRC_DIR)/UpdateProduce.cpp
 
 # AR_OBJS
-MY_AR_SRC_DIR = $(MY_7ZIP_DIR)/Archive
-MY_AR_SRC  = $(MY_AR_SRC_DIR)/Bz2Handler.cpp \
+MY_AR_SRC_DIR := $(MY_7ZIP_DIR)/Archive
+MY_AR_SRC  := $(MY_AR_SRC_DIR)/Bz2Handler.cpp \
              $(MY_AR_SRC_DIR)/DeflateProps.cpp \
              $(MY_AR_SRC_DIR)/GzHandler.cpp \
              $(MY_AR_SRC_DIR)/LzmaHandler.cpp \
@@ -130,8 +130,8 @@ MY_AR_SRC  = $(MY_AR_SRC_DIR)/Bz2Handler.cpp \
              $(MY_AR_SRC_DIR)/ZHandler.cpp
 
 # AR_COMMON_OBJS
-MY_AR_COMMON_DIR = $(MY_AR_SRC_DIR)/Common
-MY_AR_COMMON_SRC = $(MY_AR_COMMON_DIR)/CoderMixer2.cpp \
+MY_AR_COMMON_DIR := $(MY_AR_SRC_DIR)/Common
+MY_AR_COMMON_SRC := $(MY_AR_COMMON_DIR)/CoderMixer2.cpp \
                    $(MY_AR_COMMON_DIR)/CoderMixer2MT.cpp \
                    $(MY_AR_COMMON_DIR)/CrossThreadProgress.cpp \
                    $(MY_AR_COMMON_DIR)/DummyOutStream.cpp \
@@ -144,8 +144,8 @@ MY_AR_COMMON_SRC = $(MY_AR_COMMON_DIR)/CoderMixer2.cpp \
                    $(MY_AR_COMMON_DIR)/ParseProperties.cpp
 
 # 7Z_OBJS
-MY_7Z_SRC_DIR = $(MY_AR_SRC_DIR)/7z
-MY_7Z_SRC = $(MY_7Z_SRC_DIR)/7zCompressionMode.cpp \
+MY_7Z_SRC_DIR := $(MY_AR_SRC_DIR)/7z
+MY_7Z_SRC := $(MY_7Z_SRC_DIR)/7zCompressionMode.cpp \
             $(MY_7Z_SRC_DIR)/7zDecode.cpp \
             $(MY_7Z_SRC_DIR)/7zEncode.cpp \
             $(MY_7Z_SRC_DIR)/7zExtract.cpp \
@@ -161,15 +161,15 @@ MY_7Z_SRC = $(MY_7Z_SRC_DIR)/7zCompressionMode.cpp \
             $(MY_7Z_SRC_DIR)/7zUpdate.cpp \
             $(MY_7Z_SRC_DIR)/7zRegister.cpp
 
-MY_CAB_SRC_DIR = $(MY_AR_SRC_DIR)/Cab
-MY_CAB_SRC = $(MY_CAB_SRC_DIR)/CabBlockInStream.cpp \
+MY_CAB_SRC_DIR := $(MY_AR_SRC_DIR)/Cab
+MY_CAB_SRC := $(MY_CAB_SRC_DIR)/CabBlockInStream.cpp \
              $(MY_CAB_SRC_DIR)/CabHandler.cpp \
              $(MY_CAB_SRC_DIR)/CabHeader.cpp \
              $(MY_CAB_SRC_DIR)/CabIn.cpp \
              $(MY_CAB_SRC_DIR)/CabRegister.cpp
 
-MY_TAR_SRC_DIR = $(MY_AR_SRC_DIR)/Tar
-MY_TAR_SRC = $(MY_TAR_SRC_DIR)/TarHandler.cpp \
+MY_TAR_SRC_DIR := $(MY_AR_SRC_DIR)/Tar
+MY_TAR_SRC := $(MY_TAR_SRC_DIR)/TarHandler.cpp \
              $(MY_TAR_SRC_DIR)/TarHandlerOut.cpp \
              $(MY_TAR_SRC_DIR)/TarHeader.cpp \
              $(MY_TAR_SRC_DIR)/TarIn.cpp \
@@ -177,8 +177,8 @@ MY_TAR_SRC = $(MY_TAR_SRC_DIR)/TarHandler.cpp \
              $(MY_TAR_SRC_DIR)/TarUpdate.cpp \
              $(MY_TAR_SRC_DIR)/TarRegister.cpp
 
-MY_ZIP_SRC_DIR  = $(MY_AR_SRC_DIR)/Zip
-MY_ZIP_SRC = $(MY_ZIP_SRC_DIR)/ZipAddCommon.cpp \
+MY_ZIP_SRC_DIR  := $(MY_AR_SRC_DIR)/Zip
+MY_ZIP_SRC := $(MY_ZIP_SRC_DIR)/ZipAddCommon.cpp \
              $(MY_ZIP_SRC_DIR)/ZipHandler.cpp \
              $(MY_ZIP_SRC_DIR)/ZipHandlerOut.cpp \
              $(MY_ZIP_SRC_DIR)/ZipHeader.cpp \
@@ -188,8 +188,8 @@ MY_ZIP_SRC = $(MY_ZIP_SRC_DIR)/ZipAddCommon.cpp \
              $(MY_ZIP_SRC_DIR)/ZipUpdate.cpp \
              $(MY_ZIP_SRC_DIR)/ZipRegister.cpp
 
-MY_COMPRESS_SRC_DIR = $(MY_7ZIP_DIR)/Compress
-MY_COMPRESS_SRC = $(MY_COMPRESS_SRC_DIR)/Bcj2Coder.cpp \
+MY_COMPRESS_SRC_DIR := $(MY_7ZIP_DIR)/Compress
+MY_COMPRESS_SRC := $(MY_COMPRESS_SRC_DIR)/Bcj2Coder.cpp \
                   $(MY_COMPRESS_SRC_DIR)/Bcj2Register.cpp \
                   $(MY_COMPRESS_SRC_DIR)/BcjCoder.cpp \
                   $(MY_COMPRESS_SRC_DIR)/BcjRegister.cpp \
@@ -228,8 +228,8 @@ MY_COMPRESS_SRC = $(MY_COMPRESS_SRC_DIR)/Bcj2Coder.cpp \
                   $(MY_COMPRESS_SRC_DIR)/ShrinkDecoder.cpp \
                   $(MY_COMPRESS_SRC_DIR)/ZDecoder.cpp
 
-MY_CRYPTO_SRC_DIR = $(MY_7ZIP_DIR)/Crypto
-MY_CRYPTO_SRC = $(MY_CRYPTO_SRC_DIR)/7zAes.cpp \
+MY_CRYPTO_SRC_DIR := $(MY_7ZIP_DIR)/Crypto
+MY_CRYPTO_SRC := $(MY_CRYPTO_SRC_DIR)/7zAes.cpp \
                 $(MY_CRYPTO_SRC_DIR)/7zAesRegister.cpp \
                 $(MY_CRYPTO_SRC_DIR)/HmacSha1.cpp \
                 $(MY_CRYPTO_SRC_DIR)/MyAes.cpp \
@@ -240,13 +240,50 @@ MY_CRYPTO_SRC = $(MY_CRYPTO_SRC_DIR)/7zAes.cpp \
                 $(MY_CRYPTO_SRC_DIR)/ZipCrypto.cpp \
                 $(MY_CRYPTO_SRC_DIR)/ZipStrong.cpp
 
-# C_OBJS
+MY_C_SRC := $(MY_C_DIR)/7zStream.c \
+           $(MY_C_DIR)/Aes.c \
+           $(MY_C_DIR)/Alloc.c \
+           $(MY_C_DIR)/Bra.c \
+           $(MY_C_DIR)/Bra86.c \
+           $(MY_C_DIR)/BraIA64.c \
+           $(MY_C_DIR)/BwtSort.c \
+           $(MY_C_DIR)/Delta.c \
+           $(MY_C_DIR)/HuffEnc.c \
+           $(MY_C_DIR)/LzFind.c \
+           $(MY_C_DIR)/LzFindMt.c \
+           $(MY_C_DIR)/Lzma2Dec.c \
+           $(MY_C_DIR)/Lzma2Enc.c \
+           $(MY_C_DIR)/LzmaDec.c \
+           $(MY_C_DIR)/LzmaEnc.c \
+           $(MY_C_DIR)/MtCoder.c \
+           $(MY_C_DIR)/Ppmd7.c \
+           $(MY_C_DIR)/Ppmd7Dec.c \
+           $(MY_C_DIR)/Ppmd7Enc.c \
+           $(MY_C_DIR)/Ppmd8.c \
+           $(MY_C_DIR)/Ppmd8Dec.c \
+           $(MY_C_DIR)/Ppmd8Enc.c \
+           $(MY_C_DIR)/Sha256.c \
+           $(MY_C_DIR)/Sort.c \
+           $(MY_C_DIR)/Threads.c \
+           $(MY_C_DIR)/Xz.c \
+           $(MY_C_DIR)/XzCrc64.c \
+           $(MY_C_DIR)/XzDec.c \
+           $(MY_C_DIR)/XzEnc.c \
+           $(MY_C_DIR)/XzIn.c
 
-# OBJ_CRC32
-MY_CRC32_C_SRC = $(MY_C_DIR)/7zCrc.c $(MY_C_DIR)/7zCrcOpt.c
-# UTILITY_OBJS
+MY_CRC32_C_SRC := $(MY_C_DIR)/7zCrc.c $(MY_C_DIR)/7zCrcOpt.c
+
+MY_UTILITY_SRC_DIR := $(MY_CPP_DIR)/myWindows
+MY_UTILITY_SRC := $(MY_UTILITY_SRC_DIR)/myGetTickCount.cpp \
+                 $(MY_UTILITY_SRC_DIR)/wine_date_and_time.cpp \
+                 $(MY_UTILITY_SRC_DIR)/myAddExeFlag.cpp \
+                 $(MY_UTILITY_SRC_DIR)/mySplitCommandLine.cpp
 
 # Source file list
-LOCAL_SRC_FILES := hello-jni.c
+LOCAL_SRC_FILES := $(MY_CONSOLE_SRC) $(MY_COMMON_SRC) $(MY_WIN_SRC) \
+                   $(MY_7ZIP_COMMON_SRC) $(MY_7ZIP_UI_COMMON_SRC) \
+                   $(MY_AR_SRC) $(MY_AR_COMMON_SRC) $(MY_7Z_SRC) \
+                   $(MY_CAB_SRC) $(MY_TAR_SRC) $(MY_ZIP_SRC) $(MY_COMPRESS_SRC) \
+                   $(MY_CRYPTO_SRC) $(MY_C_SRC) $(MY_CRC32_C_SRC) $(MY_UTILITY_SRC)
 
 include $(BUILD_SHARED_LIBRARY)
