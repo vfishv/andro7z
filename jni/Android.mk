@@ -45,19 +45,20 @@ MY_CONSOLE_SRC = $(MY_7ZIP_UI_DIR)/BenchCon.cpp \
 # common src dir
 MY_COMMON_SRC_DIR = $(MY_CPP_DIR)/Common
 # COMMON_OBJS
-CommandLineParser.cpp \
-  CRC.cpp \
-  IntToString.cpp \
-  ListFileUtils.cpp \
-  StdInStream.cpp \
-  StdOutStream.cpp \
-  MyString.cpp \
-  StringConvert.cpp \
-  StringToInt.cpp \
-  UTFConvert.cpp \
-  MyWindows.cpp \
-  MyVector.cpp \
-  Wildcard.cpp
+MY_COMMON_SRC = $(MY_COMMON_SRC_DIR)/CommandLineParser.cpp \
+                $(MY_COMMON_SRC_DIR)/CRC.cpp \
+                $(MY_COMMON_SRC_DIR)/IntToString.cpp \
+                $(MY_COMMON_SRC_DIR)/ListFileUtils.cpp \
+                $(MY_COMMON_SRC_DIR)/StdInStream.cpp \
+                $(MY_COMMON_SRC_DIR)/StdOutStream.cpp \
+                $(MY_COMMON_SRC_DIR)/MyString.cpp \
+                $(MY_COMMON_SRC_DIR)/StringConvert.cpp \
+                $(MY_COMMON_SRC_DIR)/StringToInt.cpp \
+                $(MY_COMMON_SRC_DIR)/UTFConvert.cpp \
+                $(MY_COMMON_SRC_DIR)/MyWindows.cpp \
+                $(MY_COMMON_SRC_DIR)/MyVector.cpp \
+                $(MY_COMMON_SRC_DIR)/Wildcard.cpp
+
 # WIN_OBJS
 # 7ZIP_COMMON_OBJS
 # UI_COMMON_OBJS
