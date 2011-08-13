@@ -161,7 +161,6 @@ MY_7Z_SRC = $(MY_7Z_SRC_DIR)/7zCompressionMode.cpp \
             $(MY_7Z_SRC_DIR)/7zUpdate.cpp \
             $(MY_7Z_SRC_DIR)/7zRegister.cpp
 
-# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC MY_AR_COMMON_SRC MY_7Z_SRC MY_CAB_SRC
 MY_CAB_SRC_DIR = $(MY_AR_SRC_DIR)/Cab
 MY_CAB_SRC = $(MY_CAB_SRC_DIR)/CabBlockInStream.cpp \
              $(MY_CAB_SRC_DIR)/CabHandler.cpp \
@@ -169,15 +168,16 @@ MY_CAB_SRC = $(MY_CAB_SRC_DIR)/CabBlockInStream.cpp \
              $(MY_CAB_SRC_DIR)/CabIn.cpp \
              $(MY_CAB_SRC_DIR)/CabRegister.cpp
 
-TAR_OBJS = \
-  TarHandler.cpp \
-  TarHandlerOut.cpp \
-  TarHeader.cpp \
-  TarIn.cpp \
-  TarOut.cpp \
-  TarUpdate.cpp \
-  TarRegister.cpp
+MY_TAR_SRC_DIR = $(MY_AR_SRC_DIR)/Tar
+MY_TAR_SRC = $(MY_TAR_SRC_DIR)/TarHandler.cpp \
+             $(MY_TAR_SRC_DIR)/TarHandlerOut.cpp \
+             $(MY_TAR_SRC_DIR)/TarHeader.cpp \
+             $(MY_TAR_SRC_DIR)/TarIn.cpp \
+             $(MY_TAR_SRC_DIR)/TarOut.cpp \
+             $(MY_TAR_SRC_DIR)/TarUpdate.cpp \
+             $(MY_TAR_SRC_DIR)/TarRegister.cpp
 
+# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC MY_AR_COMMON_SRC MY_7Z_SRC MY_CAB_SRC MY_TAR_SRC
 ZIP_OBJS = \
   ZipAddCommon.cpp \
   ZipHandler.cpp \
