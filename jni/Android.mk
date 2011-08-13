@@ -177,75 +177,69 @@ MY_TAR_SRC = $(MY_TAR_SRC_DIR)/TarHandler.cpp \
              $(MY_TAR_SRC_DIR)/TarUpdate.cpp \
              $(MY_TAR_SRC_DIR)/TarRegister.cpp
 
-# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC MY_7ZIP_UI_COMMON_SRC MY_AR_SRC MY_AR_COMMON_SRC MY_7Z_SRC MY_CAB_SRC MY_TAR_SRC
-ZIP_OBJS = \
-  ZipAddCommon.cpp \
-  ZipHandler.cpp \
-  ZipHandlerOut.cpp \
-  ZipHeader.cpp \
-  ZipIn.cpp \
-  ZipItem.cpp \
-  ZipOut.cpp \
-  ZipUpdate.cpp \
-  ZipRegister.cpp
+MY_ZIP_SRC_DIR  = $(MY_AR_SRC_DIR)/Zip
+MY_ZIP_SRC = $(MY_ZIP_SRC_DIR)/ZipAddCommon.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipHandler.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipHandlerOut.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipHeader.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipIn.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipItem.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipOut.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipUpdate.cpp \
+             $(MY_ZIP_SRC_DIR)/ZipRegister.cpp
 
-COMPRESS_OBJS = \
-  Bcj2Coder.cpp \
-  Bcj2Register.cpp \
-  BcjCoder.cpp \
-  BcjRegister.cpp \
-  BitlDecoder.cpp \
-  BranchCoder.cpp \
-  BranchMisc.cpp \
-  BranchRegister.cpp \
-  ByteSwap.cpp \
-  BZip2Crc.cpp \
-  BZip2Decoder.cpp \
-  BZip2Encoder.cpp \
-  BZip2Register.cpp \
-  CopyCoder.cpp \
-  CopyRegister.cpp \
-  Deflate64Register.cpp \
-  DeflateDecoder.cpp \
-  DeflateEncoder.cpp \
-  DeflateRegister.cpp \
-  DeltaFilter.cpp \
-  ImplodeDecoder.cpp \
-  ImplodeHuffmanDecoder.cpp \
-  Lzma2Decoder.cpp \
-  Lzma2Encoder.cpp \
-  Lzma2Register.cpp \
-  LzmaDecoder.cpp \
-  LzmaEncoder.cpp \
-  LzmaRegister.cpp \
-  LzOutWindow.cpp \
-  Lzx86Converter.cpp \
-  LzxDecoder.cpp \
-  PpmdDecoder.cpp \
-  PpmdEncoder.cpp \
-  PpmdRegister.cpp \
-  PpmdZip.cpp \
-  QuantumDecoder.cpp \
-  ShrinkDecoder.cpp \
-  ZDecoder.cpp \
+MY_COMPRESS_SRC_DIR = $(MY_7ZIP_DIR)/Compress
+MY_COMPRESS_SRC = $(MY_COMPRESS_SRC_DIR)/Bcj2Coder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/Bcj2Register.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BcjCoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BcjRegister.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BitlDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BranchCoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BranchMisc.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BranchRegister.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/ByteSwap.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BZip2Crc.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BZip2Decoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BZip2Encoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/BZip2Register.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/CopyCoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/CopyRegister.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/Deflate64Register.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/DeflateDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/DeflateEncoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/DeflateRegister.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/DeltaFilter.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/ImplodeDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/ImplodeHuffmanDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/Lzma2Decoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/Lzma2Encoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/Lzma2Register.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/LzmaDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/LzmaEncoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/LzmaRegister.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/LzOutWindow.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/Lzx86Converter.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/LzxDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/PpmdDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/PpmdEncoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/PpmdRegister.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/PpmdZip.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/QuantumDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/ShrinkDecoder.cpp \
+                  $(MY_COMPRESS_SRC_DIR)/ZDecoder.cpp
 
-CRYPTO_OBJS = \
-  7zAes.cpp \
-  7zAesRegister.cpp \
-  HmacSha1.cpp \
-  MyAes.cpp \
-  Pbkdf2HmacSha1.cpp \
-  RandGen.cpp \
-  Sha1.cpp \
-  WzAes.cpp \
-  ZipCrypto.cpp \
-  ZipStrong.cpp \
+MY_CRYPTO_SRC_DIR = $(MY_7ZIP_DIR)/Crypto
+MY_CRYPTO_SRC = $(MY_CRYPTO_SRC_DIR)/7zAes.cpp \
+                $(MY_CRYPTO_SRC_DIR)/7zAesRegister.cpp \
+                $(MY_CRYPTO_SRC_DIR)/HmacSha1.cpp \
+                $(MY_CRYPTO_SRC_DIR)/MyAes.cpp \
+                $(MY_CRYPTO_SRC_DIR)/Pbkdf2HmacSha1.cpp \
+                $(MY_CRYPTO_SRC_DIR)/RandGen.cpp \
+                $(MY_CRYPTO_SRC_DIR)/Sha1.cpp \
+                $(MY_CRYPTO_SRC_DIR)/WzAes.cpp \
+                $(MY_CRYPTO_SRC_DIR)/ZipCrypto.cpp \
+                $(MY_CRYPTO_SRC_DIR)/ZipStrong.cpp
 
-# CAB_OBJS
-# TAR_OBJS
-# ZIP_OBJS
-# COMPRESS_OBJS
-# CRYPTO_OBJS
 # C_OBJS
 
 # OBJ_CRC32
