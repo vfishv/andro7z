@@ -96,7 +96,27 @@ MY_7ZIP_COMMON_SRC = $(MY_7ZIP_COMMON_SRC_DIR)/CreateCoder.cpp \
                      $(MY_7ZIP_COMMON_SRC_DIR)/StreamUtils.cpp \
                      $(MY_7ZIP_COMMON_SRC_DIR)/VirtThread.cpp
 
-# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC
+MY_UI_COMMON_SRC_DIR = $(MY_7ZIP_UI_DIR)/Common
+UI_COMMON_SRC =  $(MY_UI_COMMON_SRC_DIR)/ArchiveCommandLine.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/ArchiveExtractCallback.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/ArchiveOpenCallback.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/Bench.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/DefaultName.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/EnumDirItems.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/Extract.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/ExtractingFilePath.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/LoadCodecs.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/OpenArchive.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/PropIDUtils.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/SetProperties.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/SortUtils.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/TempFiles.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/Update.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/UpdateAction.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/UpdateCallback.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/UpdatePair.cpp \
+                 $(MY_UI_COMMON_SRC_DIR)/UpdateProduce.cpp \
+
 # UI_COMMON_OBJS
 # AR_OBJS
 # AR_COMMON_OBJS
