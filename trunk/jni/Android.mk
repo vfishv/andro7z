@@ -72,7 +72,31 @@ MY_WIN_SRC = $(MY_WIN_SRC_DIR)/Error.cpp \
              $(MY_WIN_SRC_DIR)/System.cpp \
              $(MY_WIN_SRC_DIR)/Time.cpp
 
+MY_7ZIP_COMMON_SRC_DIR = $(MY_7ZIP_DIR)/Common
 # 7ZIP_COMMON_OBJS
+MY_7ZIP_COMMON_SRC = $(MY_7ZIP_COMMON_SRC_DIR)/CreateCoder.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/CWrappers.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/FilePathAutoRename.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/FileStreams.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/FilterCoder.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/InBuffer.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/InOutTempBuffer.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/LimitedStreams.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/LockedStream.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/MemBlocks.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/MethodId.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/MethodProps.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/OffsetStream.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/OutBuffer.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/OutMemStream.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/ProgressMt.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/ProgressUtils.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/StreamBinder.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/StreamObjects.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/StreamUtils.cpp \
+                     $(MY_7ZIP_COMMON_SRC_DIR)/VirtThread.cpp
+
+# MY_CONSOLE_SRC MY_COMMON_SRC MY_WIN_SRC MY_7ZIP_COMMON_SRC
 # UI_COMMON_OBJS
 # AR_OBJS
 # AR_COMMON_OBJS
