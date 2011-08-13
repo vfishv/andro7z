@@ -32,6 +32,8 @@ UpdateCallbackConsole.o : ../../UI/Console/UpdateCallbackConsole.cpp
 	$(CXX) $(CXXFLAGS) ../../UI/Console/UpdateCallbackConsole.cpp
 UserInputUtils.o : ../../UI/Console/UserInputUtils.cpp
 	$(CXX) $(CXXFLAGS) ../../UI/Console/UserInputUtils.cpp
+
+
 AlignedBuffer.o : ../../../Common/AlignedBuffer.cpp
 	$(CXX) $(CXXFLAGS) ../../../Common/AlignedBuffer.cpp
 CommandLineParser.o : ../../../Common/CommandLineParser.cpp
