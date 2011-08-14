@@ -1,4 +1,5 @@
-# Copyright (C) 2011 SNDA
+# Copyright (C) 2011, SNDA
+# ndk make configuration for 7za
 # Author: tangyaguang@snda.com
 
 LOCAL_PATH := $(call my-dir)
@@ -12,7 +13,7 @@ LOCAL_MODULE    := 7za
 MY_LOCAL_DEFINES := -DBREAK_HANDLER -DUNICODE -D_UNICODE -DENV_NDK
 
 # Local defines copy from 'makefile.linux_cross_arm
-MY_MACHINE_DEFINES := -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
+MY_MACHINE_DEFINES := -D_FILE_OFFSET_BITS=64 \
 					 -DNDEBUG -D_REENTRANT -DENV_UNIX \
 					 -D_7ZIP_LARGE_PAGES
 
