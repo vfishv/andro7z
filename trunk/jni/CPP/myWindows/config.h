@@ -24,15 +24,12 @@
 
   #endif /* !ENV_MACOSX && !ENV_BEOS */
 
-  #if !defined(ENV_BEOS)
-    #define ENV_HAVE_GETPASS
-
-    #if !defined(sun)
-      #define ENV_HAVE_TIMEGM
-    #endif
-
-
+#if !defined(ENV_BEOS) && !defined(ENV_NDK)
+  #define ENV_HAVE_GETPASS
+  #if !defined(sun)
+    #define ENV_HAVE_TIMEGM
   #endif
+#endif
 
   /* lstat, readlink and S_ISLNK */
   #define ENV_HAVE_LSTAT
@@ -64,4 +61,3 @@
 #endif
 
 #define MAX_PATHNAME_LEN   1024
-
