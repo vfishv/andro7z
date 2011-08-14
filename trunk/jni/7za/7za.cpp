@@ -5,6 +5,16 @@
 #include "myPrivate.h"
 #include "Windows/System.h"
 
+
+#include "Common/MyException.h"
+#include "Common/StdOutStream.h"
+#include "Windows/Error.h"
+#include "Windows/NtCheck.h"
+
+#include "../CPP/7zip/UI/Common/ArchiveCommandLine.h"
+#include "../CPP/7zip/UI/Common/ExitCode.h"
+#include "../CPP/7zip/UI/Console/ConsoleClose.h"
+
 #include "7za.h"
 #include "7za_log.h"
 #include "com_snda_Andro7z_Andro7za.h"
@@ -25,6 +35,12 @@ JNIEXPORT jint JNICALL Java_com_snda_Andro7z_Andro7za_a7za_1print_1usage
     jint ret = run_7za(ARGC, test_args);
     return ret;
 }
+
+static const char *kExceptionErrorMessage = "\n\nError:\n";
+static const char *kUserBreak  = "\nBreak signaled\n";
+static const char *kMemoryExceptionMessage = "\n\nERROR: Can't allocate required memory!\n";
+static const char *kUnknownExceptionMessage = "\n\nUnknown Error\n";
+static const char *kInternalExceptionMessage = "\n\nInternal Error #";
 
 const char *HELP_STRING =
     "\nUsage: 7z"
@@ -85,25 +101,29 @@ static void show_copyright_and_help()
 
 int run_7za(int argc, const char *argv[])
 {
-    UStringVector commandStrings;
+    CStdOutStream &stdStream = g_StdOut;
+    CStdOutStream *g_StdStream = &stdStream;
+    
+    try {
+        UStringVector commandStrings;
     
 #ifdef _WIN32
-    NCommandLineParser::SplitCommandLine(GetCommandLineW(), commandStrings);
+        NCommandLineParser::SplitCommandLine(GetCommandLineW(), commandStrings);
 #else
-    extern void mySplitCommandLine(int numArgs,const char *args[],UStringVector &parts);
-    mySplitCommandLine(argc, argv, commandStrings);
+        extern void mySplitCommandLine(int numArgs,const char *args[],UStringVector &parts);
+        mySplitCommandLine(argc, argv, commandStrings);
 #endif
 
-    show_copyright_and_help();
-    
-    if (commandStrings.Size() == 1)
-    {
-        // 如果没有任何参数，打印帮助信息
         show_copyright_and_help();
-        return 0;
-    }
     
-    // commandStrings.Delete(0);
+        if (commandStrings.Size() == 1)
+        {
+            // 如果没有任何参数，打印帮助信息
+            show_copyright_and_help();
+            return 0;
+        }
+    
+        // commandStrings.Delete(0);
 
 //     CArchiveCommandLineOptions options;
 
@@ -524,5 +544,61 @@ int run_7za(int argc, const char *argv[])
 //     }
 //     else
 //         PrintHelpAndExit(stdStream);
-    return 0;
+    }
+    catch(const NConsoleClose::CCtrlBreakException &)
+    {
+        LOG_E("\n%s", kUserBreak);
+        return (NExitCode::kUserBreak);
+    }
+    catch(const CArchiveCommandLineException &e)
+    {
+        (*g_StdStream) << kExceptionErrorMessage << e << endl;
+        return (NExitCode::kUserError);
+    }
+    catch(const CSystemException &systemError)
+    {
+        if (systemError.ErrorCode == E_OUTOFMEMORY)
+        {
+            (*g_StdStream) << kMemoryExceptionMessage;
+            return (NExitCode::kMemoryError);
+        }
+        if (systemError.ErrorCode == E_ABORT)
+        {
+            (*g_StdStream) << endl << kUserBreak;
+            return (NExitCode::kUserBreak);
+        }
+        UString message;
+        (*g_StdStream) << endl << endl << "System error:" << endl << message << endl;
+        return (NExitCode::kFatalError);
+    }
+    catch(NExitCode::EEnum &exitCode)
+    {
+        (*g_StdStream) << kInternalExceptionMessage << exitCode << endl;
+        return (exitCode);
+    }
+    catch(const UString &s)
+    {
+        (*g_StdStream) << kExceptionErrorMessage << s << endl;
+        return (NExitCode::kFatalError);
+    }
+    catch(const AString &s)
+    {
+        (*g_StdStream) << kExceptionErrorMessage << s << endl;
+        return (NExitCode::kFatalError);
+    }
+    catch(const char *s)
+    {
+        (*g_StdStream) << kExceptionErrorMessage << s << endl;
+        return (NExitCode::kFatalError);
+    }
+    catch(int t)
+    {
+        (*g_StdStream) << kInternalExceptionMessage << t << endl;
+        return (NExitCode::kFatalError);
+    }
+    catch(...)
+    {
+        (*g_StdStream) << kUnknownExceptionMessage;
+        return (NExitCode::kFatalError);
+    }
 }
