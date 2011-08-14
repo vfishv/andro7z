@@ -103,7 +103,6 @@ clean:
 	$(MAKE) -C CPP/7zip/Compress/LZMA_Alone  clean
 	$(MAKE) -C CPP/7zip/Bundles/AloneGCOV    clean
 	$(MAKE) -C CPP/7zip/TEST/TestUI          clean
-	$(MAKE) -C check/my_86_filter            clean
 	rm -fr bin
 	rm -fr p7zip.app
 	rm -fr CPP/7zip/P7ZIP.*
@@ -125,11 +124,6 @@ clean:
 	find . -name "makefile*" -exec chmod -x {} \;
 	find . -name ".DS_Store" -exec rm -f {} \;
 	find . -name "._*"       -exec rm -f {} \;
-	chmod -x ChangeLog README TODO man1/* DOCS/*.txt
-	chmod +x contrib/VirtualFileSystemForMidnightCommander/u7z
-	chmod +x contrib/gzip-like_CLI_wrapper_for_7z/p7zip
-	chmod +x install.sh check/check.sh check/clean_all.sh check/check_7zr.sh 
-	cd check                  ; ./clean_all.sh
 
 test: 7za sfx
 	cd check ; ./check.sh ../bin/7za
