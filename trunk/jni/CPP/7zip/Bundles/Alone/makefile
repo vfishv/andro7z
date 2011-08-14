@@ -1,5 +1,5 @@
 PROG=../../../../bin/7za$(BINSUFFIX)
-SHARED_LIB = ../../../../bin/7za.so
+SHARED_LIB = ../../../../bin/lib7za.so
 
 LOCAL_FLAGS= \
 	  -DBREAK_HANDLER \
