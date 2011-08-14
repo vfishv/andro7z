@@ -298,4 +298,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(MY_CPP_DIR)/myWindows $(LOCAL_PATH)/$(MY_CPP
 LOCAL_CFLAGS := $(MY_CFLAGS)
 LOCAL_CPPFLAGS := $(MY_CFLAGS) $(MY_CPP_FLAGS)
 
+# link android log lib
+LOCAL_LDLIBS    := -llog
+
 include $(BUILD_SHARED_LIBRARY)
