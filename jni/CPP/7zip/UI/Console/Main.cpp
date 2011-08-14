@@ -57,7 +57,7 @@ static const char *kCopyrightString = "\n7-Zip"
 " " MY_VERSION_COPYRIGHT_DATE "\n"
 "p7zip Version " P7ZIP_VERSION ;
 
-static const char *kHelpString =
+const char *kHelpString =
     "\nUsage: 7z"
 #ifdef _NO_CRYPTO
     "r"

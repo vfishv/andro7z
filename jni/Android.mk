@@ -282,12 +282,15 @@ MY_UTILITY_SRC := $(MY_UTILITY_SRC_DIR)/myGetTickCount.cpp \
                  $(MY_UTILITY_SRC_DIR)/myAddExeFlag.cpp \
                  $(MY_UTILITY_SRC_DIR)/mySplitCommandLine.cpp
 
+MY_7ZA_SRC_DIR := 7za
+MY_7ZA_SRC := $(MY_7ZA_SRC_DIR)/7za.cpp
+
 # Source file list
 LOCAL_SRC_FILES := $(MY_CONSOLE_SRC) $(MY_COMMON_SRC) $(MY_WIN_SRC) \
                    $(MY_7ZIP_COMMON_SRC) $(MY_7ZIP_UI_COMMON_SRC) \
                    $(MY_AR_SRC) $(MY_AR_COMMON_SRC) $(MY_7Z_SRC) \
                    $(MY_CAB_SRC) $(MY_TAR_SRC) $(MY_ZIP_SRC) $(MY_COMPRESS_SRC) \
-                   $(MY_CRYPTO_SRC) $(MY_C_SRC) $(MY_CRC32_C_SRC) $(MY_UTILITY_SRC)
+                   $(MY_CRYPTO_SRC) $(MY_C_SRC) $(MY_CRC32_C_SRC) $(MY_UTILITY_SRC) $(MY_7ZA_SRC)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(MY_CPP_DIR)/myWindows $(LOCAL_PATH)/$(MY_CPP_DIR) \
                     $(LOCAL_PATH)/$(MY_CPP_DIR)/include_windows
