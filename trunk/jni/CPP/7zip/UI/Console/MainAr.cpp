@@ -33,7 +33,11 @@ static const char *kInternalExceptionMessage = "\n\nInternal Error #";
 
 #define NT_CHECK_FAIL_ACTION (*g_StdStream) << "Unsupported Windows version"; return NExitCode::kFatalError;
 
+#if !defined(ENV_NDK)
 int MY_CDECL main
+#else
+int MY_CDECL andro7za_main
+#endif
 (
   #ifndef _WIN32
   int numArgs, const char *args[]
