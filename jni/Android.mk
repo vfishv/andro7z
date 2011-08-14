@@ -22,9 +22,9 @@ MY_CPP_FLAGS := -fexceptions
 MY_CFLAGS := $(MY_LOCAL_DEFINES) $(MY_MACHINE_DEFINES)
 
 # C src dir
-MY_C_DIR := $(LOCAL_PATH)/C
+MY_C_DIR := C
 # CPP src dir
-MY_CPP_DIR := $(LOCAL_PATH)/CPP
+MY_CPP_DIR := CPP
 
 # 7zip src dir
 MY_7ZIP_DIR := $(MY_CPP_DIR)/7zip
@@ -289,7 +289,8 @@ LOCAL_SRC_FILES := $(MY_CONSOLE_SRC) $(MY_COMMON_SRC) $(MY_WIN_SRC) \
                    $(MY_CAB_SRC) $(MY_TAR_SRC) $(MY_ZIP_SRC) $(MY_COMPRESS_SRC) \
                    $(MY_CRYPTO_SRC) $(MY_C_SRC) $(MY_CRC32_C_SRC) $(MY_UTILITY_SRC)
 
-LOCAL_C_INCLUDES := $(MY_CPP_DIR)/myWindows $(MY_CPP_DIR) $(MY_CPP_DIR)/include_windows
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(MY_CPP_DIR)/myWindows $(LOCAL_PATH)/$(MY_CPP_DIR) \
+                    $(LOCAL_PATH)/$(MY_CPP_DIR)/include_windows
 
 LOCAL_CFLAGS := $(MY_CFLAGS)
 LOCAL_CPPFLAGS := $(MY_CFLAGS) $(MY_CPP_FLAGS)
