@@ -22,9 +22,9 @@ MY_CPP_FLAGS := -fexceptions
 MY_CFLAGS := $(MY_LOCAL_DEFINES) $(MY_MACHINE_DEFINES)
 
 # C src dir
-MY_C_DIR := C
+MY_C_DIR := $(LOCAL_PATH)/C
 # CPP src dir
-MY_CPP_DIR := CPP
+MY_CPP_DIR := $(LOCAL_PATH)/CPP
 
 # 7zip src dir
 MY_7ZIP_DIR := $(MY_CPP_DIR)/7zip
